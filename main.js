@@ -57,3 +57,4 @@ var pi_chudnovsky_bs = function(digits){
 };
 
 console.log(pi_chudnovsky_bs(1));
+println(pi_chudnovsky_bs(1));
