@@ -56,5 +56,6 @@ var pi_chudnovsky_bs = function(digits){
     return floor((Q*426880*sqrtC) / T);
 };
 
+var pi = pi_chudnovsky_bs(1));
 
-println(pi_chudnovsky_bs(1));
+print(pi);
