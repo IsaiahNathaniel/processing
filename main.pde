@@ -30,15 +30,15 @@ var pi_chudnovsky_bs = function(digits){
                 Tab = -Tab;
             }
         }
-        else{
+        else{                                                           //RECURSIVE CODE BEGINS HERE
             // Recursively compute P(a,b), Q(a,b) and T(a,b)
             // m is the midpoint of a and b
             var m = floor((a + b) / 2);
             // Recursively calculate P(a,m), Q(a,m) and T(a,m)
-            var Pam= bs(a, m), Qam= bs(a, m), Tam = bs(a, m);
+            var Pam= setTimeout(bs(a, m), 0), Qam= setTimeout(bs(a, m), 0), Tam = setTimeout(bs(a, m), 0);
             // Recursively calculate P(m,b), Q(m,b) and T(m,b)
-            var Pmb=bs(m, b), Qmb=bs(m, b), Tmb = bs(m, b);
-            // Now combine
+            var Pmb= setTimeout(bs(m, b), 0), Qmb=setTimeout(bs(m, b), 0), Tmb = setTimeout(bs(m, b), 0);      
+            // Now combine                                                  //ENDS   HERE
             Pab = Pam * Pmb;
             Qab = Qam * Qmb;
             Tab = Qmb * Tam + Pam * Tmb;
@@ -50,11 +50,11 @@ var pi_chudnovsky_bs = function(digits){
     var DIGITS_PER_TERM = log(C3_OVER_24/6/2/6);
     var N = digits/DIGITS_PER_TERM + 1;
     // Calclate P(0,N) and Q(0,N)
-    var P= bs(0, N), Q= bs(0, N), T = bs(0, N);
+    var P= setTimeout(bs(0, N), 0), Q= setTimeout(bs(0, N), 0), T = setTimeout(bs(0, N), 0);             /ONE MORE LINE OF RECURSIVE.
     var one = pow(10,digits);
     var sqrtC = sqrt(10005*one);
     return floor((Q*426880*sqrtC) / T);
 };
 
-console.log(pi_chudnovsky_bs(1));
+
 println(pi_chudnovsky_bs(1));
