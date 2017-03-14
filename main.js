@@ -4,14 +4,14 @@ var pi_chudnovsky_bs = function(digits){
     var C3_OVER_24 = floor(pow(C,3)/24);
     var bs = function(a, b){
         
-        Computes the terms for binary splitting the Chudnovsky infinite series
+        // Computes the terms for binary splitting the Chudnovsky infinite series
 
         a(a) = +/- (13591409 + 545140134*a)
         p(a) = (6*a-5)*(2*a-1)*(6*a-1)
         b(a) = 1
         q(a) = a*a*a*C3_OVER_24
 
-        returns P(a,b), Q(a,b) and T(a,b)
+        // returns P(a,b), Q(a,b) and T(a,b)
         
         var Pab, Qab, Tab;
         if(b - a === 1){
